@@ -1,7 +1,7 @@
 #ifndef STAGE_H
 #define STAGE_H
 
-#include <string.h>
+#include <string>
 #include <iostream>
 #include "Falcon.h"
 

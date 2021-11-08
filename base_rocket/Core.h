@@ -4,6 +4,7 @@
 #include <string.h>
 #include <iostream>
 #include "Merlin.h"
+#include "MerlinRocket.h"
 
 using namespace std;
 

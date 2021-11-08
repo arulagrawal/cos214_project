@@ -2,7 +2,7 @@
 #define MERLINVAC_H
 
 #include "Merlin.h"
-#include <string.h>
+#include <string>
 #include <iostream>
 
 using namespace std;

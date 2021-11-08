@@ -1,7 +1,7 @@
 #ifndef STAGETWO_H
 #define STAGETWO_H
 
-#include <string.h>
+#include <string>
 #include <iostream>
 #include "Stage.h"
 

@@ -1,4 +1,7 @@
 #include "Falcon.h"
+#include "Stage.h"
+#include "StageOne.h"
+#include "StageTwo.h"
 
 Falcon::Falcon(int weight, string mode){
     cargoWeight = weight;
@@ -16,7 +19,7 @@ void Falcon::nextStage(){
     stage->next();
 }
 
-MerlinVac* Falcon::getVac(){
+Merlin* Falcon::getVac(){
     return engine;
 }
 

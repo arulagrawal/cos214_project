@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "Falcon.h"
+#include "Stage.h"
 
 using namespace std;
 

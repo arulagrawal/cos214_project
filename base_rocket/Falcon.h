@@ -6,6 +6,8 @@
 
 #include "Core.h"
 #include "Merlin.h"
+#include "MerlinVac.h"
+#include "MerlinRocket.h"
 //#include "Stage.h"
 //#include "Dragon.h" ------- to be implemented
 

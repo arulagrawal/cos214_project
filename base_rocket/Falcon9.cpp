@@ -1,5 +1,4 @@
 #include "Falcon9.h"
-#include "Stage.h"
 
 /*Falcon9::Falcon9(int weight, string mode) : Falcon(weight, mode){
     core = new Core();
@@ -42,6 +41,6 @@ Core* Falcon9::getCore(){
     return this->core;
 }
 
-MerlinVac* Falcon9::getEngine(){
+Merlin* Falcon9::getEngine(){
     return this->engine;
 }
