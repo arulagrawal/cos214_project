@@ -52,7 +52,10 @@ bool Core::isOn(){
 double Core::boost(double weight, double alt){
     if(isOn()){
         alt += 30 / (weight/2000);//Random equations to generate altitude values to simulate acceleration depending on current weight.
+        double tmp = pow(1.8, -1 * fuelWeight) + 0.2 * fuelWeight;
+        //cout<<tmp<<endl;
         fuelWeight -= 0.25 * (weight/2);//Calculates how much fuel to burn depending on current weight.
+        //cout << "Fuel: " << fuelWeight << endl;
         return alt;
     }else{
         cout << "Rockets not powered on, cannot boost." << endl;

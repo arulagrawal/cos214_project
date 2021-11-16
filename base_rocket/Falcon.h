@@ -18,6 +18,7 @@ class MerlinVac;
 
 class Falcon {
     friend class Falcon9;
+    friend class FalconHeavy;
     public:
         Falcon(double weight, bool test);//Weight is the weight of cargo(not fuel) and test is a boolean (must be "test" or "sim") to determine whether rocket flies in test or sim mode.
         virtual bool staticFire() = 0;

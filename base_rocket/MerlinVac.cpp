@@ -1,7 +1,7 @@
 #include "MerlinVac.h"
 
 MerlinVac::MerlinVac(){
-    fuelWeight = 2000;
+    fuelWeight = 1000;
     power = false;
 }
 
@@ -16,8 +16,11 @@ bool MerlinVac::test(){
 
 double MerlinVac::boost(double weight, double alt){//made up equations to simulate acceleration and fuel burn based on weight
     if(isOn()){
-        alt += 10 / (weight/2000);
+        alt += 1 / (weight/2000);
+        //double tmp = pow(1.8, -1 * fuelWeight) + 0.2 * fuelWeight;
+        //fuelWeight -= 0.15 * (weight/2);
         fuelWeight -= 0.15 * (weight/2);
+        //cout<<fuelWeight<<endl;
         return alt;
     }else{
         cout << "Merlin Vacuum not powered on, cannot boost." << endl;

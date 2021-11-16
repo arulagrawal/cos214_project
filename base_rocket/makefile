@@ -10,9 +10,9 @@
 #clean:
 #	rm *.o main
 #
-OBJS	= main.o Core.o Falcon.o Falcon9.o MerlinRocket.o MerlinVac.o Stage.o StageOne.o StageTwo.o 
-SOURCE	= main.cpp Core.cpp Falcon.cpp Falcon9.cpp MerlinRocket.cpp MerlinVac.cpp Stage.cpp StageOne.cpp StageTwo.cpp 
-HEADER	= Core.h Falcon.h Falcon9.h MerlinRocket.h MerlinVac.h Stage.h StageOne.h StageTwo.h
+OBJS	= main.o Core.o Falcon.o Falcon9.o MerlinRocket.o MerlinVac.o Stage.o StageOne.o StageTwo.o FalconHeavy.o CoreAdapter.o
+SOURCE	= main.cpp Core.cpp Falcon.cpp Falcon9.cpp MerlinRocket.cpp MerlinVac.cpp Stage.cpp StageOne.cpp StageTwo.cpp FalconHeavy.cpp CoreAdapter.cpp
+HEADER	= Core.h Falcon.h Falcon9.h MerlinRocket.h MerlinVac.h Stage.h StageOne.h StageTwo.h FalconHeavy.h CoreAdapter.h
 OUT	= a.out
 CC	 = g++
 FLAGS	 = -g -c 
@@ -48,6 +48,12 @@ StageOne.o: StageOne.cpp
 
 StageTwo.o: StageTwo.cpp
 	$(CC) $(FLAGS) StageTwo.cpp
+
+FalconHeavy.o: FalconHeavy.cpp
+	$(CC) $(FLAGS) FalconHeavy.cpp
+
+CoreAdapter.o: CoreAdapter.cpp
+	$(CC) $(FLAGS) CoreAdapter.cpp
 
 clean:
 	rm -f $(OBJS) $(OUT)
