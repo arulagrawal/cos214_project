@@ -8,20 +8,42 @@
 #include "MerlinRocket.h"
 
 using namespace std;
+///Core of all rockets.
+///
+///Contains fuel and directly controls the engines.
+class Core
+{
+public:
+    ///Constructor
+    /**
+         * @param fuelWeight Weight of the fuel contained in this core. Used for calculations in boost()*/
+    Core(double fuelWeight);
+    virtual bool staticFire();
+    virtual double getFuelWeight();
+    virtual bool hasFuel();
+    /**turns on all engines in the core*/
+    virtual void on();
+    virtual void off();
+    /**
+     * @brief Calculates how much the rocket is boosted depending on weight and fuelWeight, recommended not to directly use this method, but to be called by the launchSequence() and state class.
+     * 
+     * @param weight Current weight of the rocket as cargo weight + fuel weight, to be done automatically by whichever function calls on boost().
+     * @param alt Current altitude of the rocket.
+     * @return The new altitude after the boost as a double. 
+     */
+    virtual double boost(double weight, double alt);
+    /**
+     * @brief Checks if all engines are on.
+     * 
+     * @return true 
+     * @return false 
+     */
+    virtual bool isOn();
 
-class Core{
-    public:
-        Core(double fuelWeight);//fuelWeight is the amount of fuel for the stage one engines. Used for calculations.
-        virtual bool staticFire();
-        virtual double getFuelWeight();
-        virtual bool hasFuel();
-        virtual void on();//Turn on all engines contained in the core
-        virtual void off();
-        virtual double boost(double weight, double alt);//Takes in the current weight of the rocket and altitude. Recommended not to use alone, but to be called by the launchSequence and state. Note: this weight is cargo weight + fuel weight and is done automatically by the caller function
-        virtual bool isOn();//Checks if engines are on
-    private:
-        int fuelWeight;
-        MerlinRocket* engines[9];//The 9 engines of the core
+private:
+    int fuelWeight;
+    /*Each core contains 9 engines.*/
+    MerlinRocket *engines[9];
 };
 
 #endif

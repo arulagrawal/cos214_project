@@ -4,20 +4,47 @@
 #include "Core.h"
 
 using namespace std;
+/**
+ * An adapter that treats 3 seperate cores as a single core. Used in FalconHeavy which requires 3 cores.
+ * 
+ */
+class CoreAdapter : public Core
+{
+public:
+    /**
+ * @brief Construct a new Core Adapter object
+ * 
+ * @param fuelWeight The amount of fuel for the stage one engines. Used for calculations.
+ */
+    CoreAdapter(double fuelWeight);
+    bool staticFire();
+    double getFuelWeight();
+    bool hasFuel();
+    /**
+     * @brief Turn on all engines contained in the cores
+     * 
+     */
+    void on();
+    void off();
+    /**
+         * @brief Calculates how much the rocket is boosted depending on weight and fuelWeight, recommended not to directly use this method, but to be called by the launchSequence() and state class.
+         * 
+         * @param weight Current weight of the rocket as cargo weight + fuel weight, to be done automatically by whichever function calls on boost().
+         * @param alt Current altitude of the rocket.
+         * @return The new altitude after the boost as a double. 
+         */
+    double boost(double weight, double alt);
+    /**
+         * @brief Checks if all engines are on.
+         * 
+         * @return true 
+         * @return false 
+         */
+    bool isOn();
 
-class CoreAdapter : public Core{
-    public:
-        CoreAdapter(double fuelWeight);//fuelWeight is the amount of fuel for the stage one engines. Used for calculations.
-        bool staticFire();
-        double getFuelWeight();
-        bool hasFuel();
-        void on();//Turn on all engines contained in the cores
-        void off();
-        double boost(double weight, double alt);//Takes in the current weight of the rocket and altitude. Recommended not to use alone, but to be called by the launchSequence and state. Note: this weight is cargo weight + fuel weight and is done automatically by the caller function
-        bool isOn();//Checks if engines are on
-    private:
-        int fuelWeight;
-        Core* cores[3];
+private:
+    int fuelWeight;
+    Core *cores[3];
 };
 
 #endif
