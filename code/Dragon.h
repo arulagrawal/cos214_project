@@ -17,6 +17,9 @@ class Dragon : public Spacecraft
         void slow();
         void left();
         void right();
+        void detach();
+        void notify();
+        void attachOb(Observer ob);
 };
 
 #endif
