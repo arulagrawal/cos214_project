@@ -32,6 +32,7 @@ public:
     ~Spacecraft();
     void loadCargo(string item);
     void unloadCargo(string item);
+    void dettach();
     virtual void boost() = 0;
     virtual void slow() = 0;
     virtual void left() = 0;

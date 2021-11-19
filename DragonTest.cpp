@@ -8,11 +8,11 @@ using namespace std;
 int main()
 {
     //First cargo test
-    cout<<"\n\n Cargo test - no crew";
+    cout<<"\n\nCargo test - no crew";
     int cargoSize = 0;
     //get amount of cargo to be added to spacecraft
     
-    cout<<"\n How much cargo will be added: ";
+    cout<<"\nHow much cargo will be added: ";
     
     cin>>cargoSize;
 
@@ -30,7 +30,7 @@ int main()
     for(int i = 0; i < cargoSize; i++)
     {
         
-        cout<<"\n\n Enter the name/description of cargo item-"<<i<<": ";
+        cout<<"\n\nEnter the name/description of cargo item-"<<i<<": ";
         cin>>cargo[i];
         
     }
@@ -40,18 +40,35 @@ int main()
     Dragon *cargoCraft = new Dragon(cargo, cargoSize);
 
 
-    //test movemement of craft
-    cout<<"\n\nSlow the craft down"<<endl;
+    //test movemement of craft attached
+    cout<<"\nMovement attached";
+    cout<<"\nSlow the craft down"<<endl;
     cargoCraft->slow();
 
-    cout<<"\n\nBoost the craft"<<endl;
+    cout<<"\nBoost the craft"<<endl;
     cargoCraft->boost();
 
-    cout<<"\n\nTurn craft left"<<endl;
+    cout<<"\nTurn craft left"<<endl;
     cargoCraft->left();
 
-    cout<<"\n\nTurn craft right"<<endl;
+    cout<<"\nTurn craft right"<<endl;
     cargoCraft->right();
+
+cargoCraft->dettach();
+    //test movemement of craft dettached
+    cout<<"\nMovement dettached";
+    cout<<"\nSlow the craft down"<<endl;
+    cargoCraft->slow();
+
+    cout<<"\nBoost the craft"<<endl;
+    cargoCraft->boost();
+
+    cout<<"\nTurn craft left"<<endl;
+    cargoCraft->left();
+
+    cout<<"\nTurn craft right"<<endl;
+    cargoCraft->right();
+
 
 
     //unload craft

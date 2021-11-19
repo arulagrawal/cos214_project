@@ -24,6 +24,11 @@ void Spacecraft::unloadCargo(string item)
     cout <<"Unloading item "<< item <<endl;
 }
 
+void Spacecraft::dettach()
+{
+    stage->next();
+}
+
 Spacecraft::~Spacecraft()
 {
     delete cargo;
