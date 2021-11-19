@@ -3,9 +3,9 @@
 
 #include <string.h>
 #include <iostream>
-#include "Spacecraft.h"
-#include "StageAttached.h"
-#include "StageDettached.h"
+#include "code/Spacecraft.h"
+#include "code/StageAttached.h"
+#include "code/StageDettached.h"
 
 using namespace std;
 
