@@ -1,7 +1,7 @@
 #include "Falcon.h"
-#include "code/Stage.h"
-#include "code/StageOne.h"
-#include "code/StageTwo.h"
+#include "Stage.h"
+#include "StageOne.h"
+#include "StageTwo.h"
 
 Falcon::Falcon(double weight, bool test){
     cargoWeight = weight;

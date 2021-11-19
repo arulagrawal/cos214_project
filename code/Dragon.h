@@ -6,6 +6,7 @@
 #include "code/Spacecraft.h"
 #include "code/StageAttached.h"
 #include "code/StageDettached.h"
+#include "Cargo.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class Dragon : public Spacecraft
         void right();
         void detach();
         void notify();
-        void attachOb(Observer ob);
+        void attachOb(Cargo* ob);
 };
 
 #endif
