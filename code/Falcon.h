@@ -63,6 +63,12 @@ public:
      * 
      */
     void attachSpacecraft(Spacecraft *);
+    virtual Falcon* clone() = 0;
+    virtual void setFuel(int) = 0;
+
+protected:
+    double getCargoWeight();
+    void setAltitude(double);
 
 private:
     double cargoWeight;
@@ -71,7 +77,7 @@ private:
     MerlinVac *engine;
     Stage *stage;
     bool test;
-    /*Dragon spacecraft to be pluggged in here once inplemented*/
+    /*Dragon spacecraft to be plugged in here once inplemented*/
     Spacecraft* spacecraft;
 };
 

@@ -35,8 +35,9 @@ public:
     void dettach();
     virtual void boost() = 0;
     virtual void slow() = 0;
-    virtual void left() = 0;
     virtual void right() = 0;
+    virtual void left() = 0;
+    virtual Spacecraft* clone() = 0;
 };
 
 #endif

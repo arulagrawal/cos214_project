@@ -45,3 +45,9 @@ void DragonCrew::disembark(string member)
 {
     cout << "Crew member " << member << " exciting Spacecraft" << endl;
 }
+
+Spacecraft* DragonCrew::clone(){
+    int arrCargoSize = sizeof(cargo)/sizeof(cargo[0]);
+    int arrCrewSize = sizeof(crew)/sizeof(crew[0]);
+    return new DragonCrew(this->cargo, arrCargoSize, this->crew, arrCrewSize);
+}

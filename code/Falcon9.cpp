@@ -3,6 +3,7 @@
 Falcon9::Falcon9(double weight, double fuelWeight, bool test) : Falcon(weight, test)
 {
     core = new Core(fuelWeight);
+    this->fuelWeight = fuelWeight;
     stage = new StageOne(this);
     //mode = mode;
 }
@@ -70,4 +71,13 @@ double Falcon9::boost(double weight, double alt)
 MerlinVac *Falcon9::getEngine()
 {
     return this->engine;
+}
+
+Falcon* Falcon9::clone(){
+    Falcon* f = new Falcon9(this->getCargoWeight(), this->fuelWeight, this->test);
+    return f;
+}
+
+void Falcon9::setFuel(int f){
+    this->core->setFuel(f);
 }

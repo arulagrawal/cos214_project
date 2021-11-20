@@ -42,9 +42,12 @@ public:
     double boost(double weight, double alt);
     Core *getCore();
     MerlinVac *getEngine();
+    Falcon* clone();
+    void setFuel(int);
 
 private:
     Core *core; //This is falcon 9 so only one core
+    double fuelWeight; //Only for cloning purposes, not used in any other function in this class.
 };
 
 #endif

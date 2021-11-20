@@ -83,3 +83,20 @@ double CoreAdapter::boost(double weight, double alt)
         return alt;
     }
 }
+
+Core *CoreAdapter::clone()
+{
+    Core *c = new CoreAdapter(this->fuelWeight);
+    if (isOn())
+    {
+        c->on();
+    }
+    return c;
+}
+
+void CoreAdapter::setFuel(int){
+    for (int i = 0; i < 3; i++)
+    {
+        cores[i]->setFuel(fuelWeight / 3);
+    }
+}

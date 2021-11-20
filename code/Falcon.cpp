@@ -50,6 +50,17 @@ void Falcon::notify()
     }
 }
 
-void Falcon::attachSpacecraft(Spacecraft * s){
+void Falcon::attachSpacecraft(Spacecraft *s)
+{
     this->spacecraft = s;
+}
+
+double Falcon::getCargoWeight()
+{
+    return this->cargoWeight;
+}
+
+void Falcon::setAltitude(double a)
+{
+    this->altitude = a;
 }

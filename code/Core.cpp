@@ -1,64 +1,98 @@
 #include "Core.h"
 
-Core::Core(double fuelWeight){
+Core::Core(double fuelWeight)
+{
     this->fuelWeight = fuelWeight;
-    for(int i = 0; i < 9; i++){
+    for (int i = 0; i < 9; i++)
+    {
         engines[i] = new MerlinRocket();
     }
 }
 
-bool Core::staticFire(){
-    for(int i = 0; i < 9; i++){
-        if(!engines[i]->test()){ 
+bool Core::staticFire()
+{
+    for (int i = 0; i < 9; i++)
+    {
+        if (!engines[i]->test())
+        {
             return false;
         }
     }
     return true;
 }
 
-void Core::on(){
-    for(int i = 0; i < 9; i++){
+void Core::on()
+{
+    for (int i = 0; i < 9; i++)
+    {
         engines[i]->on();
     }
 }
 
-void Core::off(){
-    for(int i = 0; i < 9; i++){
+void Core::off()
+{
+    for (int i = 0; i < 9; i++)
+    {
         engines[i]->off();
     }
 }
 
-double Core::getFuelWeight(){
+double Core::getFuelWeight()
+{
     return fuelWeight;
 }
 
-bool Core::hasFuel(){
-    if(fuelWeight > 0){
+bool Core::hasFuel()
+{
+    if (fuelWeight > 0)
+    {
         return true;
-    }else{
+    }
+    else
+    {
         return false;
     }
 }
 
-bool Core::isOn(){
-    for(int i = 0; i < 9; i++){
-        if(!engines[i]->isOn()){
+bool Core::isOn()
+{
+    for (int i = 0; i < 9; i++)
+    {
+        if (!engines[i]->isOn())
+        {
             return false;
         }
     }
     return true;
 }
 
-double Core::boost(double weight, double alt){
-    if(isOn()){
-        alt += 30 / (weight/2000);//Random equations to generate altitude values to simulate acceleration depending on current weight.
+double Core::boost(double weight, double alt)
+{
+    if (isOn())
+    {
+        alt += 30 / (weight / 2000); //Random equations to generate altitude values to simulate acceleration depending on current weight.
         double tmp = pow(1.8, -1 * fuelWeight) + 0.2 * fuelWeight;
         //cout<<tmp<<endl;
-        fuelWeight -= 0.25 * (weight/2);//Calculates how much fuel to burn depending on current weight.
+        fuelWeight -= 0.25 * (weight / 2); //Calculates how much fuel to burn depending on current weight.
         //cout << "Fuel: " << fuelWeight << endl;
         return alt;
-    }else{
+    }
+    else
+    {
         cout << "Rockets not powered on, cannot boost." << endl;
         return alt;
     }
+}
+
+Core *Core::clone()
+{
+    Core *c = new Core(this->fuelWeight);
+    if (this->isOn())
+    {
+        c->on();
+    }
+}
+
+void Core::setFuel(int f){
+    this->fuelWeight = f;
 }

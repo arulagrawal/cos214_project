@@ -10,7 +10,11 @@ using namespace std;
 int main()
 {//This main file could be used as a guide or basis to the simulator classification
 
+<<<<<<< HEAD
+        //First cargo test
+=======
     //First cargo test
+>>>>>>> 6507dd9fe18afc3eede8439edbfe351fbe4521f0
     cout<<"\n\n Cargo test - no crew";
     int cargoSize = 0;
     //get amount of cargo to be added to spacecraft
@@ -40,7 +44,11 @@ int main()
 
     //create spacecraft
 
+<<<<<<< HEAD
+    Dragon *cargoCraft = new Dragon(cargo, cargoSize);
+=======
     Spacecraft *cargoCraft = new Dragon(cargo, cargoSize);
+>>>>>>> 6507dd9fe18afc3eede8439edbfe351fbe4521f0
     cargoCraft->setStage(new StageDettached(cargoCraft));
 
     Falcon9* test = new Falcon9(1000.00, 5000.00, false);//The simulated physics are still a bit iffy, I'll play around with the equations to make them a bit more realistic.
@@ -146,6 +154,24 @@ int main()
 
     //create spacecraft
 
+<<<<<<< HEAD
+    Dragon *cargoCraft = new Dragon(cargo, cargoSize);
+    cargoCraft->setStage(new StageDettached(cargoCraft));
+
+
+    //test movemement of craft
+    cout<<"\n\nSlow the craft down"<<endl;
+    cargoCraft->slow();
+
+    cout<<"\n\nBoost the craft"<<endl;
+    cargoCraft->boost();
+
+    cout<<"\n\nTurn craft left"<<endl;
+    cargoCraft->left();
+
+    cout<<"\n\nTurn craft right"<<endl;
+    cargoCraft->right();
+=======
     SpaceCraft *cargoCraft = new Dragon(cargo, cargoSize);
     cargoCraft->setStage(new StageDettached(cargoCraft));
 
@@ -198,6 +224,7 @@ int main()
 
     cout<<"\n\nTurn craft right"<<endl;
     rMove->Press();
+>>>>>>> 6507dd9fe18afc3eede8439edbfe351fbe4521f0
 
 
     //unload craft
@@ -269,6 +296,23 @@ int main()
 
     //create spacecraft
 
+<<<<<<< HEAD
+    DragonCrew *crewCraft = new DragonCrew(cargo, cargoSize, crew, crewSize);
+
+
+    //test movemement of craft
+    cout<<"\n\nSlow the craft down"<<endl;
+    crewCraft->slow();
+
+    cout<<"\n\nBoost the craft"<<endl;
+    crewCraft->boost();
+
+    cout<<"\n\nTurn craft left"<<endl;
+    crewCraft->left();
+
+    cout<<"\n\nTurn craft right"<<endl;
+    crewCraft->right();
+=======
     SpaceCraft *crewCraft = new DragonCrew(cargo, cargoSize, crew, crewSize);
 
     //create Command Buttons
@@ -301,6 +345,7 @@ int main()
 
     cout<<"\n\nTurn craft right"<<endl;
     rMove2->Press();
+>>>>>>> 6507dd9fe18afc3eede8439edbfe351fbe4521f0
 
 
     //unload craft

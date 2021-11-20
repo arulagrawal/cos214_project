@@ -1,8 +1,7 @@
 #include "Dragon.h"
 
-Dragon::Dragon(string cargo[], int cargoSize) : Spacecraft(cargo, cargoSize) 
+Dragon::Dragon(string cargo[], int cargoSize) : Spacecraft(cargo, cargoSize)
 {
-    
 }
 
 void Dragon::boost()
@@ -23,4 +22,10 @@ void Dragon::left()
 void Dragon::right()
 {
     stage->right();
+}
+
+Spacecraft *Dragon::clone()
+{
+    int arrCargoSize = sizeof(cargo) / sizeof(cargo[0]);
+    return new Dragon(this->cargo, arrCargoSize);
 }

@@ -47,6 +47,8 @@ public:
      * @return MerlinVac* 
      */
     MerlinVac *getEngine();
+    Falcon* clone();
+    void setFuel(int);
 
 private:
     Core *core;

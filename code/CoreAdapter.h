@@ -41,6 +41,8 @@ public:
          * @return false 
          */
     bool isOn();
+    Core* clone();
+    void setFuel(int);
 
 private:
     int fuelWeight;

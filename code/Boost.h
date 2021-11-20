@@ -1,6 +1,3 @@
-//
-// Created by Damian on 2021/11/19.
-//
 
 #ifndef BOOST_H
 #define BOOST_H

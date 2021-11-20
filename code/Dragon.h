@@ -16,7 +16,7 @@ class Dragon : public Spacecraft
         void boost();
         void slow();
         void left();
-        void right();
+        void right();Spacecraft* clone();
 };
 
 #endif

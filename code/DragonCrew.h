@@ -22,7 +22,10 @@ class DragonCrew : public Spacecraft
         void right();
         void embark(string member);
         void disembark(string member);
+        Spacecraft* clone();
         //return spacecraft to earth method?
 };
 
+
 #endif
+
