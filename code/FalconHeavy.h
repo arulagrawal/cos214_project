@@ -4,8 +4,8 @@
 #include <string>
 #include <iostream>
 #include "Falcon.h"
-#include "code/StageOne.h"
-#include "code/StageTwo.h"
+#include "StageOne.h"
+#include "StageTwo.h"
 #include "CoreAdapter.h"
 
 using namespace std;
