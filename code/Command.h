@@ -1,27 +1,23 @@
+//
+// Created by Damian on 2021/11/19.
+//
+
 #ifndef COMMAND_H
 #define COMMAND_H
-
 #include "Spacecraft.h"
-#include <iostream>
-#include <string>
 
-using namespace std;
-
-class Command
-{
-    friend class Boost;
-    friend class Slow;
-    friend class Left;
-    friend class Right;
-
-public:
+class Command {
+public :
     Command();
-    Command(Spacecraft *);
+    Command(Spacecraft* );
     virtual void execute() = 0;
     virtual void undo() = 0;
+    Spacecraft* getCraft();
+    void setCraft(Spacecraft* );
 
 private:
-    Spacecraft *receiver;
+    Spacecraft* reciever;
 };
+
 
 #endif
