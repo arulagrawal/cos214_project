@@ -7,6 +7,7 @@
 #include "Core.h"
 //#include "Merlin.h"
 #include "MerlinVac.h"
+#include "Spacecraft.h"
 //#include "MerlinRocket.h"
 //#include "Stage.h"
 //#include "Dragon.h" ------- to be implemented
@@ -52,6 +53,16 @@ public:
      * @return MerlinVac* 
      */
     MerlinVac *getEngine();
+    /**
+     * @brief Notifies the observer(spacecraft) on stage changes.
+     * 
+     */
+    void notify();
+    /**
+     * @brief Attaches a spacecraft to the rocket.
+     * 
+     */
+    void attachSpacecraft(Spacecraft *);
 
 private:
     double cargoWeight;
@@ -61,6 +72,7 @@ private:
     Stage *stage;
     bool test;
     /*Dragon spacecraft to be pluggged in here once inplemented*/
+    Spacecraft* spacecraft;
 };
 
 #endif

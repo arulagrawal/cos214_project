@@ -1,7 +1,7 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include "code/Spacecraft.h"
+#include "Spacecraft.h"
 #include <iostream>
 #include <string>
 

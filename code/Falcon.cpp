@@ -3,7 +3,8 @@
 #include "StageOne.h"
 #include "StageTwo.h"
 
-Falcon::Falcon(double weight, bool test){
+Falcon::Falcon(double weight, bool test)
+{
     cargoWeight = weight;
     stage = new StageOne(this);
     altitude = 0;
@@ -11,22 +12,44 @@ Falcon::Falcon(double weight, bool test){
     test = test;
 }
 
-int Falcon::getAltitude(){
+int Falcon::getAltitude()
+{
     return altitude;
 }
 
-void Falcon::nextStage(){
+void Falcon::nextStage()
+{
     stage->next();
 }
 
-MerlinVac* Falcon::getEngine(){
+MerlinVac *Falcon::getEngine()
+{
     return engine;
 }
 
-void Falcon::setState(Stage* s){
+void Falcon::setState(Stage *s)
+{
     stage = s;
 }
 
-Stage* Falcon::getStage(){
+Stage *Falcon::getStage()
+{
     return this->stage;
+}
+
+void Falcon::notify()
+{
+    if (this->spacecraft != NULL)
+    {
+        spacecraft->dettach();
+        cout << "Spacecraft dettached." << endl;
+    }
+    else
+    {
+        cout << "No spacecraft to dettach." << endl;
+    }
+}
+
+void Falcon::attachSpacecraft(Spacecraft * s){
+    this->spacecraft = s;
 }

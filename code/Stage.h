@@ -21,7 +21,7 @@ class Stage {
         virtual void off() = 0;
         virtual double boost(double weight, double alt) = 0;
         virtual void next() = 0;
-        virtual void boost() = 0;
+        virtual void boost(){};
         virtual void slow(){};
         virtual void left(){};
         virtual void right(){};

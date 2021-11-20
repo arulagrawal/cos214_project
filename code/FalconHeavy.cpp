@@ -40,6 +40,7 @@ void FalconHeavy::launchSequence(){
             cout << "Spacecraft could not reach destination." << endl;
         }else{
             cout << "Destination reached." << endl;
+            notify();
         }
     }
 }

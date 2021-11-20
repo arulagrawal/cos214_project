@@ -1,5 +1,5 @@
 #include <iostream>
-#include "code/Spacecraft.h"
+#include "Spacecraft.h"
 #include "Dragon.h"
 #include "DragonCrew.h"
 

@@ -22,5 +22,4 @@ void StageDettached::right(){
 }
 
 void StageDettached::next(){
-    cout<<"Spacecraft already dettached";
 }

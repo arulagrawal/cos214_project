@@ -9,7 +9,43 @@ using namespace std;
 
 int main()
 {//This main file could be used as a guide or basis to the simulator classification
+
+        //First cargo test
+    cout<<"\n\n Cargo test - no crew";
+    int cargoSize = 0;
+    //get amount of cargo to be added to spacecraft
+    
+    cout<<"\n How much cargo will be added: ";
+    
+    cin>>cargoSize;
+
+    while(cargoSize < 0)
+    {
+
+        cout<<"\nEnter a valid positive number: ";
+        cin>>cargoSize;
+    }
+
+    string *cargo = new string[cargoSize];
+
+    //get cargo item names/descriptions
+    
+    for(int i = 0; i < cargoSize; i++)
+    {
+        
+        cout<<"\n\n Enter the name/description of cargo item-"<<i<<": ";
+        cin>>cargo[i];
+        
+    }
+
+    //create spacecraft
+
+    Dragon *cargoCraft = new Dragon(cargo, cargoSize);
+    cargoCraft->setStage(new StageDettached(cargoCraft));
+
     Falcon9* test = new Falcon9(1000.00, 5000.00, false);//The simulated physics are still a bit iffy, I'll play around with the equations to make them a bit more realistic.
+
+    test->attachSpacecraft(cargoCraft);
 
     /*cout << "\n\nTesting staticFire function and its chance of generating a failure. Each engine has a 1% chance of failing, 9 engines here means 9% chance of failure...\n" << endl;
 
@@ -31,7 +67,7 @@ int main()
     cout <<test->getCore()->getFuelWeight() << endl;
 
 
-    //test->launchSequence();
+    test->launchSequence();
 
     cout << "--------------------TESTING FALCON HEAVY-------------------" << endl;
 
@@ -57,7 +93,7 @@ int main()
     cout <<test2->getCore()->getFuelWeight() << endl;
 
 
-    //test2->launchSequence();
+    test2->launchSequence();
 
 
 
@@ -81,7 +117,7 @@ int main()
 
     //---------------------------------------------------------Spacecraft test---------------------------------------------------------------
     //First cargo test
-    cout<<"\n\n Cargo test - no crew";
+    /*cout<<"\n\n Cargo test - no crew";
     int cargoSize = 0;
     //get amount of cargo to be added to spacecraft
     
@@ -232,5 +268,5 @@ int main()
 
 
     //delete crewCraft;
-    //delete crewCargo;
+    //delete crewCargo;*/
 }
