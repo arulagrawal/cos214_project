@@ -18,7 +18,7 @@ void Spacestation::updateSpacestationData(string name[]) {
         }
     }
     else{
-        cout<<"The spacestation is at full capacity. Goodluck free falling."
+        cout<<"The spacestation is at full capacity. Goodluck free falling.";
     }
 }
 
