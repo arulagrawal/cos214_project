@@ -29,3 +29,10 @@ Spacecraft *Dragon::clone()
     int arrCargoSize = sizeof(cargo) / sizeof(cargo[0]);
     return new Dragon(this->cargo, arrCargoSize);
 }
+
+
+vector<string> Dragon::getPeople() {
+    vector<string> empty;
+    return empty;
+}
+

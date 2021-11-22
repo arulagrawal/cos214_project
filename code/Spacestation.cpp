@@ -10,15 +10,15 @@ using namespace std;
 
 ///The Spacestation is a singleton with the purpose of holding all crew that arrive at the station.
 ///updateSpacestationData just adds new names to the register.
-void Spacestation::updateSpacestationData(string name[]) {
-    if(curr < num){
-        for(int x = 0; x < name->size(); x++){
-            names[curr] = name[x];
+void Spacestation::updateSpacestationData(vector<string> people) {
+    if (curr < num) {
+        for (int x = 0; x < people.size(); x++) {
+            names[curr] = people[x];
+            cout << people[x] << " has entered the space station." << endl;
             curr++;
         }
-    }
-    else{
-        cout<<"The spacestation is at full capacity. Goodluck free falling.";
+    } else {
+        cout << "The spacestation is at full capacity. Goodluck free falling." << endl;
     }
 }
 
@@ -28,27 +28,25 @@ Spacestation::Spacestation() {
 }
 
 void Spacestation::printSpacestation() {
-    cout<<"There are "<<curr<<" people on the station.";
+    cout << "There are " << curr << " people on the station.";
 }
 
 Spacestation::~Spacestation() {
-
 }
-void Spacestation::setVisitor(Spacecraft *V) {
-Visitor = V;
+void Spacestation::setVisitor(Spacecraft* V) {
+    visitor = V;
 }
 
 void Spacestation::removeVisitor() {
-    delete Visitor;
-    Visitor = NULL;
+    delete visitor;
+    visitor = NULL;
 }
 
 Spacestation* Spacestation::onlyStation = 0;
 
 Spacestation* Spacestation::instance() {
-    if(onlyStation == 0){
+    if (onlyStation == 0) {
         onlyStation = new Spacestation();
     }
     return onlyStation;
 }
-

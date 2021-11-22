@@ -13,7 +13,7 @@ using namespace std;
 class Spacestation {
 public:
     static Spacestation* instance();
-    void updateSpacestationData(string name[]);
+    void updateSpacestationData(vector<string> people);
     void printSpacestation();
     void setVisitor(Spacecraft* V);
     void removeVisitor();
@@ -27,7 +27,7 @@ private:
     string* names;
     int num = 400;
     int curr;
-    Spacecraft* Visitor;
+    Spacecraft* visitor;
 };
 
 

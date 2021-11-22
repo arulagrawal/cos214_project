@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include "Spacestation.h"
 
 using namespace std;
 
@@ -38,6 +40,9 @@ public:
     virtual void right() = 0;
     virtual void left() = 0;
     virtual Spacecraft* clone() = 0;
+    virtual vector<string> getPeople() = 0;
+    void dock();
+    void disembark();
 };
 
 #endif
