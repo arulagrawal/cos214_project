@@ -41,8 +41,8 @@ public:
     virtual void left() = 0;
     virtual Spacecraft* clone() = 0;
     virtual vector<string> getPeople() = 0;
-    void dock();
-    void disembark();
+    void dockAtSpacestation();
+    void leaveSpacestation();
 };
 
 #endif
