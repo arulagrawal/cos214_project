@@ -7,6 +7,9 @@
 #include "StageOne.h"
 #include "StageTwo.h"
 #include "CoreAdapter.h"
+#include "CoreAdapterCaretaker.h"
+#include "FalconHeavyState.h"
+#include "FalconHeavyCaretaker.h"
 
 using namespace std;
 /**
@@ -31,7 +34,7 @@ public:
      * @brief Responsible for launching the rocket and calling the methods required to simulate acceleration and fuel burn
      * 
      */
-    void launchSequence();
+    bool launchSequence();
     /**
      * @brief Calls on different boost methods depending on what stage the rocket is in.
      * 
@@ -49,9 +52,13 @@ public:
     MerlinVac *getEngine();
     Falcon* clone();
     void setFuel(int);
+    int getFuelWeight();
+    FalconHeavyMemento* createMemento();
+    void reinstateMemento(FalconHeavyMemento* mem);
 
 private:
     Core *core;
+    double fuelWeight;//for cloning purposes only
 };
 
 #endif

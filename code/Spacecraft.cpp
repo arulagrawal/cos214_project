@@ -33,7 +33,7 @@ void Spacecraft::setStage(Stage* s) {
     this->stage = s;
 }
 
-void Spacecraft::dockAtSpacestation() {
+void Spacecraft::dock() {
     Spacestation* station = Spacestation::instance();
     station->setVisitor(this);
 
@@ -41,7 +41,7 @@ void Spacecraft::dockAtSpacestation() {
 
 }
 
-void Spacecraft::leaveSpacestation() {
+void Spacecraft::disembark() {
     Spacestation* station = Spacestation::instance();
     station->removeVisitor();
 }

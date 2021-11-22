@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string>
 
+class Spacecraft;
 using namespace std;
 
 class Spacestation {

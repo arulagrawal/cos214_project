@@ -8,6 +8,7 @@
 
 class Right : public Command{
 public:
+    Right(Spacecraft*);
     virtual void execute();
 };
 

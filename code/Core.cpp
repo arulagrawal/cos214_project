@@ -1,6 +1,6 @@
 #include "Core.h"
 
-Core::Core(double fuelWeight)
+Core::Core(int fuelWeight)
 {
     this->fuelWeight = fuelWeight;
     for (int i = 0; i < 9; i++)
@@ -91,8 +91,26 @@ Core *Core::clone()
     {
         c->on();
     }
+    return c;
 }
 
-void Core::setFuel(int f){
+void Core::setFuel(int f)
+{
     this->fuelWeight = f;
+}
+
+CoreMemento *Core::createMemento()
+{
+    return new CoreMemento(this->fuelWeight, this->isOn());
+}
+
+void Core::reinstateMemento(CoreMemento *mem)
+{
+    CoreState *s = mem->coreState;
+    cout<< "Reinstate Mem - Get Fuel Weight Core: " <<s->getFuelWeight()<<endl;
+    this->fuelWeight = s->getFuelWeight();
+    for (int i = 0; i < 9; i++)
+    {
+        engines[i] = s->getEngines()[i];
+    }
 }

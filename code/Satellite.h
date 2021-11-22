@@ -5,12 +5,19 @@
 #ifndef SATELLITE_H
 #define SATELLITE_H
 
+#include <string>
 
+using namespace std;
 class Satellite {
 public:
-    Satellite();
+    Satellite(string name);
+    //Satellite(Satellite*);
     ~Satellite();
+    string getName();
     Satellite* clone();
+
+private:
+    string name;
 };
 
 

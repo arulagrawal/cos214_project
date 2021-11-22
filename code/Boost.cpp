@@ -4,7 +4,13 @@
 
 #include "Boost.h"
 
+Boost::Boost(Spacecraft *s)
+{
+    this->receiver = s;
+}
+
 ///runs the boost method in the spacecraft
-void Boost::execute(){
+void Boost::execute()
+{
     getCraft()->boost();
 }

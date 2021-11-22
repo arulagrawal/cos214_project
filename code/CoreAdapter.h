@@ -2,6 +2,8 @@
 #define COREADAPTER_H
 
 #include "Core.h"
+#include "CoreAdapterMemento.h"
+class CoreAdapterMemento;
 
 using namespace std;
 /**
@@ -16,7 +18,7 @@ public:
  * 
  * @param fuelWeight The amount of fuel for the stage one engines. Used for calculations.
  */
-    CoreAdapter(double fuelWeight);
+    CoreAdapter(int fuelWeight);
     bool staticFire();
     double getFuelWeight();
     bool hasFuel();
@@ -41,8 +43,11 @@ public:
          * @return false 
          */
     bool isOn();
-    Core* clone();
+    Core *clone();
     void setFuel(int);
+    const bool isAdapter = true;
+    CoreMemento* createMemento();
+    void reinstateMemento(CoreAdapterMemento *mem);
 
 private:
     int fuelWeight;

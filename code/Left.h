@@ -8,8 +8,9 @@
 
 class Left : public Command{
 public:
+    Left(Spacecraft*);
     virtual void execute();
 };
 
 
-#endif LEFT_H
+#endif

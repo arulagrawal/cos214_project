@@ -5,13 +5,19 @@
 #include "Satellite.h"
 
 ///This is the Satellite class which is responisble for mass producing the Satellite objects for the Rocket.
-Satellite::Satellite(){
-
+Satellite::Satellite(string name){
+    this->name = name;
 }
+
+
 
 
 Satellite::~Satellite(){
 
+}
+
+string Satellite::getName(){
+    return name;
 }
 
 ///

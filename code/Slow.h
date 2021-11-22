@@ -8,8 +8,8 @@
 
 class Slow : public Command{
 public:
+    Slow(Spacecraft*);
     virtual void execute();
 };
-
 
 #endif

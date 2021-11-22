@@ -16,8 +16,7 @@ class Dragon : public Spacecraft
         void boost();
         void slow();
         void left();
-        void right();
-        Spacecraft* clone();
+        void right();Spacecraft* clone();
         vector<string> getPeople();
 };
 

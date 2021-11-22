@@ -35,4 +35,3 @@ vector<string> Dragon::getPeople() {
     vector<string> empty;
     return empty;
 }
-

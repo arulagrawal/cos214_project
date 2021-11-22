@@ -6,6 +6,8 @@
 #include <cmath>
 //#include "Merlin.h"
 #include "MerlinRocket.h"
+#include "CoreMemento.h"
+class CoreMemento;
 
 using namespace std;
 ///Core of all rockets.
@@ -17,7 +19,7 @@ public:
     ///Constructor
     /**
          * @param fuelWeight Weight of the fuel contained in this core. Used for calculations in boost()*/
-    Core(double fuelWeight);
+    Core(int fuelWeight);
     virtual bool staticFire();
     virtual double getFuelWeight();
     virtual bool hasFuel();
@@ -40,7 +42,10 @@ public:
      */
     virtual bool isOn();
     Core* clone();
-    void setFuel(int);
+    virtual void setFuel(int);
+    const bool isAdapter = false;
+    virtual CoreMemento* createMemento();
+    virtual void reinstateMemento(CoreMemento* mem);
 
 private:
     int fuelWeight;

@@ -5,6 +5,7 @@
 
 class Boost : public Command{
 public:
+    Boost(Spacecraft*);
     virtual void execute();
 };
 

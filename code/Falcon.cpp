@@ -9,9 +9,7 @@ Falcon::Falcon(double weight, bool test)
     stage = new StageOne(this);
     altitude = 0;
     engine = new MerlinVac();
-    test = test;
-    Satellite* links = new Satellite[60];
-    setSatellite();
+    this->test = test;
 }
 
 int Falcon::getAltitude()
@@ -45,11 +43,6 @@ void Falcon::notify()
     {
         spacecraft->dettach();
         cout << "Spacecraft dettached." << endl;
-        cout << "Satellites Deploying." << endl;
-        for(int x = 0; x < 60; x++){
-            delete links[x];
-        }
-        delete [] links;
     }
     else
     {
@@ -72,9 +65,43 @@ void Falcon::setAltitude(double a)
     this->altitude = a;
 }
 
-void Falcon::setSatellite(){
-    Satellite* first = new Satellite();
-       for(int x = 0; x<60; x++){
-            links[x] = first->clone();
-        }
+void Falcon::setWeight(int w)
+{
+    this->cargoWeight = w;
+}
+
+bool Falcon::getTest()
+{
+    return this->test;
+}
+
+void Falcon::attachSat(SatCluster *s)
+{
+    this->satCluster = s;
+    //cout << "Attaching" << endl;
+}
+
+void Falcon::detachSat()
+{
+    if (this->satCluster == NULL)
+    {
+        cout << "No clusters to detach." << endl;
+    }
+    else
+    {
+        this->satCluster = NULL;
+        cout << "Satellites launched and activated." << endl;
+    }
+}
+
+Spacecraft *Falcon::getSpacecraft()
+{
+    if (this->spacecraft != NULL)
+    {
+        return this->spacecraft;
+    }
+    else
+    {
+        return NULL;
+    }
 }
