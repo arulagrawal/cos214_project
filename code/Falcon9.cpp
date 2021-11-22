@@ -1,5 +1,5 @@
 #include "Falcon9.h"
-
+///Falcon9 is one of the rocket types a spacecraft can have.
 Falcon9::Falcon9(double weight, double fuelWeight, bool test) : Falcon(weight, test)
 {
     core = new Core(fuelWeight);
@@ -22,7 +22,7 @@ void Falcon9::off()
 {
     stage->off();
 }
-
+/// @brief LaunchSequence runs the launch of the rocket if all conditions are correct for the rocket to take off
 bool Falcon9::launchSequence()
 {
     if (this->test == true)
@@ -188,19 +188,19 @@ void Falcon9::setFuel(int f)
 {
     this->core->setFuel(f);
 }
-
+///@brief AttachCluster attachs a collection of Satellites as a cluster to the Rocket.
 void Falcon9::attachCluster(SatCluster *s)
 {
     this->satCluster = s;
     spacecraft = NULL;
 }
-
+///@brief AttachSpacecraft attachs a spacecraft to the rocket so the spacecraft may take off.
 void Falcon9::attachSpacecraft(Spacecraft *s)
 {
     this->spacecraft = s;
     satCluster = NULL;
 }
-
+///@brief AttachCluster dettachs a collection of Satellites as a cluster from the Rocket.
 void Falcon9::detachCluster()
 {
     satCluster = NULL;
@@ -211,7 +211,7 @@ int Falcon9::getFuelWeight()
 {
     return this->core->getFuelWeight();
 }
-
+///@brief createMemento creates a memento of the current Rocket as to save its current state for possible later use.
 Falcon9Memento *Falcon9::createMemento()
 {
     return new Falcon9Memento(this->cargoWeight, this->altitude, this->fuelWeight);

@@ -41,11 +41,11 @@ public:
      * @return false 
      */
     virtual bool isOn();
-    Core* clone();
+    Core *clone();
     virtual void setFuel(int);
     const bool isAdapter = false;
-    virtual CoreMemento* createMemento();
-    virtual void reinstateMemento(CoreMemento* mem);
+    virtual CoreMemento *createMemento();
+    virtual void reinstateMemento(CoreMemento *mem);
 
 private:
     int fuelWeight;

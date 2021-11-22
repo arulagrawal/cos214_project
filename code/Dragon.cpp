@@ -1,5 +1,5 @@
 #include "Dragon.h"
-
+///The dragon spacecraft can move in all its normal directions and can clone itself.
 Dragon::Dragon(string cargo[], int cargoSize) : Spacecraft(cargo, cargoSize)
 {
 }

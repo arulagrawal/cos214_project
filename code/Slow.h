@@ -5,7 +5,7 @@
 #ifndef SLOW_H
 #define SLOW_H
 #include "Command.h"
-
+///The slow class is used to decellerate the spacecraft.
 class Slow : public Command{
 public:
     Slow(Spacecraft*);

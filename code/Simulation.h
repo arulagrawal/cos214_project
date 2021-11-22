@@ -21,6 +21,11 @@ using namespace std;
 
 class Simulation
 {
+    /**
+    * @brief The Simulation class is where the simulations of launches will be run
+    * 
+    */
+    
     public:
         Simulation();
         void start();

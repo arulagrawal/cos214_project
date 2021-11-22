@@ -5,7 +5,10 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 #include "Spacecraft.h"
-
+/**
+ * @brief Base class for commands.
+ * 
+ */
 class Command {
     friend class Boost;
     friend class Slow;

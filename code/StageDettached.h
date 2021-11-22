@@ -6,7 +6,7 @@
 #include "Stage.h"
 
 using namespace std;
-
+///The rocket dettaches from the spacecraft for this stage
 class StageDettached : public Stage
 {
 public:

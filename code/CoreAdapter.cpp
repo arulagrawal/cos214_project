@@ -113,14 +113,14 @@ CoreMemento *CoreAdapter::createMemento()
     {
         copy[i] = cores[i]->clone();
     }
-    cout << "FUEL WEIGHT IN COREADAPTER: " << this->fuelWeight << endl;
+    //cout << "FUEL WEIGHT IN COREADAPTER: " << this->fuelWeight << endl;
     return new CoreAdapterMemento(this->fuelWeight, copy, isOn());
 }
 
 void CoreAdapter::reinstateMemento(CoreAdapterMemento *mem)
 {
     CoreAdapterState *s = mem->coreAdapterState;
-    cout<< "Reinstate Mem - Get Fuel Weight: " <<s->getFuelWeight()<<endl;
+    //cout<< "Reinstate Mem - Get Fuel Weight: " <<s->getFuelWeight()<<endl;
     this->fuelWeight = s->getFuelWeight();
     for (int i = 0; i < 3; i++)
     {

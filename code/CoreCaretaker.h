@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+ * @brief Stores and retrieves a memento storing the state of a Core.
+ * 
+ */
 class CoreCaretaker
 {
 public:

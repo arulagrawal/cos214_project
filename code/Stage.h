@@ -7,7 +7,10 @@
 #include "Spacecraft.h"
 
 using namespace std;
-
+/**
+ * @brief The base class for all the various Stage classes
+ * 
+ */
 class Stage {
     friend class StageOne;
     friend class StageTwo;

@@ -45,7 +45,7 @@ bool FalconHeavy::launchSequence()
                     cout << "Change fuel, cargo weight or altitude?" << endl;
                     cout << "Revert to before last change = 2, Yes = 1, No = 0" << endl;
                     cin >> changeWeight;
-                    cout<< changeWeight<<endl;
+                    cout << changeWeight << endl;
                     if (changeWeight == 1)
                     {
                         temp.storeMemento(core->createMemento());
@@ -67,7 +67,7 @@ bool FalconHeavy::launchSequence()
                     else if (changeWeight == 2)
                     {
                         cout << "Reverting to last change." << endl;
-                        CoreMemento* mem = temp.retrieveMemento();
+                        CoreMemento *mem = temp.retrieveMemento();
                         FalconHeavyMemento *mem2 = temp2.retrieveMemento();
                         core->reinstateMemento(mem);
                         this->reinstateMemento(mem2);
@@ -126,15 +126,17 @@ bool FalconHeavy::launchSequence()
         {
             while (altitude < 350 && core->hasFuel())
             {
-                altitude = boost(this->cargoWeight + core->getFuelWeight(), this->altitude);
+                //cout << "HasFuel stage one: " << core->hasFuel() << endl;
+                altitude = boost(this->cargoWeight + 15000 + core->getFuelWeight(), this->altitude);
                 cout << "Current Altitude: " << altitude << " km" << endl;
             }
             nextStage(); //NB! Rocket enters stage 2 once it reaches 350km or cores run out of fuel
-            cargoWeight -= 15000;
+            //cargoWeight -= 15000;
             cout << "Entered stage 2." << endl;
             on();
             while (altitude < 400 && engine->hasFuel())
             { //400km is the goal
+                cout << "HasFuel stage 2: " << core->hasFuel() << endl;
                 altitude = boost(this->cargoWeight, this->altitude);
                 cout << "Current Altitude: " << altitude << " km" << endl;
             }

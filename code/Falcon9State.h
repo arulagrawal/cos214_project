@@ -5,7 +5,8 @@
 
 
 using namespace std;
-
+///Falcon9State creates the state of the current Falcon9Rocket
+///@param fuelWeight is the weight of the current rockets fuel
 class Falcon9State : public FalconState
 {
     private:

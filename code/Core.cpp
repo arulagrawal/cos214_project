@@ -107,7 +107,7 @@ CoreMemento *Core::createMemento()
 void Core::reinstateMemento(CoreMemento *mem)
 {
     CoreState *s = mem->coreState;
-    cout<< "Reinstate Mem - Get Fuel Weight Core: " <<s->getFuelWeight()<<endl;
+    //cout<< "Reinstate Mem - Get Fuel Weight Core: " <<s->getFuelWeight()<<endl;
     this->fuelWeight = s->getFuelWeight();
     for (int i = 0; i < 9; i++)
     {

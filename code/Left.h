@@ -5,7 +5,7 @@
 #ifndef LEFT_H
 #define LEFT_H
 #include "Command.h"
-
+///Makes the spacecraft move to the left.
 class Left : public Command{
 public:
     Left(Spacecraft*);

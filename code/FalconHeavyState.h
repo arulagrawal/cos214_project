@@ -4,7 +4,8 @@
 #include "FalconState.h"
 
 using namespace std;
-
+///FalconHeavyState creates the state of the current FalconHeavyRocket
+///@param fuelWeight is the weight of the current rockets fuel
 class FalconHeavyState : public FalconState
 {
     private:

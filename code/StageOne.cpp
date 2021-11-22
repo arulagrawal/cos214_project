@@ -1,7 +1,7 @@
 //#include "Falcon9.h"
 #include "StageOne.h"
 #include "StageTwo.h"
-
+///runs all the functions of stage according to stageOne parameters and requirements.
 StageOne::StageOne(Falcon* f) : Stage(f){
 
 }

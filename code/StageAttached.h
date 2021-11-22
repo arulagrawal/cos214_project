@@ -7,6 +7,11 @@
 
 using namespace std;
 
+/**
+ * @brief The StageAttached class inherits from Stage and is the stage in which a Spacecraft is attached
+ * 
+ */
+
 class StageAttached : public Stage
 {
 public:

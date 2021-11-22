@@ -5,6 +5,10 @@
 #include "CoreState.h"
 using namespace std;
 
+/**
+ * @brief Stores the state of a CoreAdapter.
+ * 
+ */
 class CoreAdapterState : public CoreState
 {
 public:

@@ -4,7 +4,10 @@
 #include "CoreAdapterMemento.h"
 
 using namespace std;
-
+/**
+ * @brief Stores and retrieves a memento which stores the state of a core.
+ * 
+ */
 class CoreAdapterCaretaker
 {
     public:

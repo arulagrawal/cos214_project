@@ -1,5 +1,5 @@
 #include "DragonCrew.h"
-
+///The DragonCrew Spacecraft can only move in its respective diretions, can clone itself and has a crew unlike the other spacecraft.
 DragonCrew::DragonCrew(string cargo[], int cargoSize, string crew[], int crewSize) : Spacecraft(cargo, cargoSize)
 {
     this->crewSize = crewSize;
@@ -12,7 +12,7 @@ DragonCrew::DragonCrew(string cargo[], int cargoSize, string crew[], int crewSiz
 
 DragonCrew::DragonCrew(string cargo[], int cargoSize, vector<string> crew, int crewSize) : Spacecraft(cargo, cargoSize)
 {
-    this->crew = crew;
+    //this->crew = crew;
     this->crewSize = crewSize;
     for (int i = 0; i < crewSize; i++)
     {
@@ -56,14 +56,22 @@ void DragonCrew::disembark(string member)
     cout << "Crew member " << member << " exciting Spacecraft" << endl;
 }
 
-vector<string> DragonCrew::getPeople() {
-    vector<string> empty;
-    return empty;
+vector<string> DragonCrew::getPeople()
+{
+    //vector<string> empty;
+    return this->crew;
 }
 
-
-Spacecraft* DragonCrew::clone() {
-    int arrCargoSize = sizeof(cargo)/sizeof(cargo[0]);
-    int arrCrewSize = sizeof(crew)/sizeof(crew[0]);
+Spacecraft *DragonCrew::clone()
+{
+    int arrCargoSize = sizeof(cargo) / sizeof(cargo[0]);
+    int arrCrewSize = sizeof(crew) / sizeof(crew[0]);
     return new DragonCrew(this->cargo, arrCargoSize, this->crew, arrCrewSize);
+}
+
+void DragonCrew::dock()
+{
+    Spacestation *station = Spacestation::instance();
+    station->setVisitor(this);
+    station->updateSpacestationData(this->crew);
 }

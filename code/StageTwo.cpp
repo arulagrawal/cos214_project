@@ -1,5 +1,5 @@
 #include "StageTwo.h"
-
+///runs all the functions of stage according to stageTwo parameters and requirements.
 StageTwo::StageTwo(Falcon* f) : Stage(f){
 
 }

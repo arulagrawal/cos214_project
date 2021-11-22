@@ -2,7 +2,7 @@
 #include "Stage.h"
 #include "StageOne.h"
 #include "StageTwo.h"
-
+///Falcon is the base of the 2 types of Rockets - Falcon9 and FalconHeavy. It attaches to a Spacecraft to ensure liftoff.
 Falcon::Falcon(double weight, bool test)
 {
     cargoWeight = weight;

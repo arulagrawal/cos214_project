@@ -3,7 +3,7 @@
 CoreMemento::CoreMemento(int fuelWeight, bool isOn)
 {
     this->coreState = new CoreState(fuelWeight, isOn);
-    cout << "FUEL WEIGHT: " << fuelWeight << endl;
+    //cout << "FUEL WEIGHT: " << fuelWeight << endl;
 }
 
 CoreMemento::~CoreMemento()

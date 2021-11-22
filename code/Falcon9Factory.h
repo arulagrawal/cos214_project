@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+///This class uses createFalcon to create as many Falcon Rockets as nessecary for the simulation.
 class Falcon9Factory : public FalconFactory
 {
     protected:

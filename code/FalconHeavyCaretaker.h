@@ -4,7 +4,8 @@
 #include "FalconHeavyMemento.h"
 
 using namespace std;
-
+///FalconHeavyCaretake stores and retrieves mementos of a FalconHeavy Rocket for later use.
+///@param mem is used to store the memento.
 class FalconHeavyCaretaker
 {
     private:

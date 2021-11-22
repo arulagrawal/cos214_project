@@ -10,7 +10,7 @@
 
 class Spacecraft;
 using namespace std;
-
+///The spacestation is the final destination of the spacecraft
 class Spacestation {
 public:
     static Spacestation* instance();
@@ -27,7 +27,7 @@ private:
     static Spacestation* onlyStation;
     string* names;
     int num = 400;
-    int curr;
+    int curr = 0;
     Spacecraft* visitor;
 };
 

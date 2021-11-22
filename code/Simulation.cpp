@@ -89,15 +89,24 @@ Simulation::Simulation()
             cout << "\nHow many crew members will be added: ";
             cin >> crewSize;
 
-            string *crew = new string[crewSize];
-
+            //string *crew = new string[crewSize];
+            vector<string> crew;
+            string crewMember;
             //get crew names/descriptions
+
+            /* for (int i = 0; i < crewSize; i++)
+            {
+
+                cout << "\n\nEnter the name/description of crew member-" << i << ": ";
+                cin >> crew[i];
+            }*/
 
             for (int i = 0; i < crewSize; i++)
             {
 
                 cout << "\n\nEnter the name/description of crew member-" << i << ": ";
-                cin >> crew[i];
+                cin >> crewMember;
+                crew.push_back(crewMember);
             }
 
             int cargoSize;
@@ -167,15 +176,15 @@ Simulation::Simulation()
             cout << "\nHow many crew members will be added: ";
             cin >> crewSize;
 
-            string *crew = new string[crewSize];
-
-            //get crew names/descriptions
+            vector<string> crew;
+            string crewMember;
 
             for (int i = 0; i < crewSize; i++)
             {
 
                 cout << "\n\nEnter the name/description of crew member-" << i << ": ";
-                cin >> crew[i];
+                cin >> crewMember;
+                crew.push_back(crewMember);
             }
 
             int cargoSize;
@@ -199,13 +208,6 @@ Simulation::Simulation()
             DragonCrew *crewCraft = new DragonCrew(cargo, cargoSize, crew, crewSize);
             falcon->attachSpacecraft(crewCraft);
         }
-        /*else if (craft == 3)
-        {
-            SatCluster *s = new SatCluster("Starlink");
-            cout << "Satellite Cluster created and attached to rocket. Weight set to 1000kg" << endl;
-            falcon->setWeight(1000);
-            falcon->attachSat(s);
-        }*/
     }
 }
 
@@ -221,10 +223,75 @@ void Simulation::start()
     {
         int x = randNum();
         int y = randNum();
-        int yCount = 0;
-        int xCount = 0;
-        Command* up = new Boost(spacecraft);
+        //int yCount = 0;
+        //int xCount = 0;
+        Command *moveUp = new Boost(spacecraft);
+        Command *moveDown = new Slow(spacecraft);
+        Command *moveRight = new Right(spacecraft);
+        Command *moveLeft = new Left(spacecraft);
+        Button *up = new Button(moveUp);
+        Button *down = new Button(moveDown);
+        Button *right = new Button(moveRight);
+        Button *left = new Button(moveLeft);
+        cout << "Distance from spacestation: " << endl;
+        string xAxis;
+        string yAxis;
+        while (x != 0 || y != 0)
+        {
+            if (x < 0)
+            {
+                xAxis = "Left";
+                cout << -1 * x << " Units " << xAxis << endl;
+            }
+            else if (x >= 0)
+            {
+                xAxis = "Right";
+                cout << x << " Units " << xAxis << endl;
+            }
+            if (y < 0)
+            {
+                yAxis = "Down";
+                cout << -1 * y << " Units " << yAxis << endl;
+            }
+            else if (y >= 0)
+            {
+                yAxis = "Up";
+                cout << y << " Units " << yAxis << endl;
+            }
+            char in;
+            cout << "-------------Controls---------------" << endl;
+            cout << "W -> Up" << endl;
+            cout << "A -> Left" << endl;
+            cout << "S -> Down" << endl;
+            cout << "D -> Right" << endl;
+            cin >> in;
+            in = (char)toupper(in);
 
+            switch (in)
+            {
+            case 'S':
+                down->Press();
+                y++;
+                break;
+            case 'D':
+                right->Press();
+                x--;
+                break;
+            case 'W':
+                up->Press();
+                y--;
+                break;
+            case 'A':
+                left->Press();
+                x++;
+                break;
+            default:
+                cout << "Incorrect input" << endl;
+            }
+        }
+        //cout <<"REACHED BEFORE DOCK FUNC" <<endl;
+        cout << "Spacecraft successfully navigated to spacestation and has docked." << endl;
+        spacecraft->dock();
     }
 }
 

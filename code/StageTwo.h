@@ -6,7 +6,10 @@
 #include "Stage.h"
 
 using namespace std;
-
+/**
+ * @brief The StageTwo class inherits from Stage and is the second stage of the rocket launch
+ * 
+ */
 class StageTwo : public Stage{
     public:
         StageTwo(Falcon*);
