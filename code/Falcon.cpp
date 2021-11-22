@@ -10,6 +10,8 @@ Falcon::Falcon(double weight, bool test)
     altitude = 0;
     engine = new MerlinVac();
     test = test;
+    Satellite* links = new Satellite[60];
+    setSatellite();
 }
 
 int Falcon::getAltitude()
@@ -43,6 +45,11 @@ void Falcon::notify()
     {
         spacecraft->dettach();
         cout << "Spacecraft dettached." << endl;
+        cout << "Satellites Deploying." << endl;
+        for(int x = 0; x < 60; x++){
+            delete links[x];
+        }
+        delete [] links;
     }
     else
     {
@@ -63,4 +70,11 @@ double Falcon::getCargoWeight()
 void Falcon::setAltitude(double a)
 {
     this->altitude = a;
+}
+
+void Falcon::setSatellite(){
+    Satellite* first = new Satellite();
+       for(int x = 0; x<60; x++){
+            links[x] = first->clone();
+        }
 }
