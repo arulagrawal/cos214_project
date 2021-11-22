@@ -12,9 +12,11 @@ using namespace std;
 class DragonCrew : public Spacecraft 
 {
     private: 
-        string *crew;
+        vector<string> crew;
+        int crewSize;
     public:
         DragonCrew(string cargo[], int cargoSize, string crew[], int crewSize);         //crew array initialised before intializing DragonCrew
+        DragonCrew(string cargo[], int cargoSize, vector<string> crew, int crewSize);
         ~DragonCrew();
         void boost();
         void slow();
@@ -24,6 +26,8 @@ class DragonCrew : public Spacecraft
         void disembark(string member);
         Spacecraft* clone();
         //return spacecraft to earth method?
+
+        vector<string> getPeople();
 };
 
 
