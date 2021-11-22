@@ -8,5 +8,6 @@ Report:
 Running the program:
 Compiling:
 - To compile the program, navigate to the code folder and compile with `make`
+
 Run:
 - After compiling, the program can be run with the command `make run`
