@@ -11,3 +11,6 @@ Compiling:
 
 Run:
 - After compiling, the program can be run with the command `make run`
+
+Doxygen:
+- Extract the files from Doxygen.rar, open index.html
